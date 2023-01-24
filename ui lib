@@ -1,5 +1,4 @@
--- lol its just the ui im using feel free to skid of it
-
+-- ui lib lol (shoutout to PhillipThePaster on github)
 local lib = {}
 
 lib.init = function(title, accent, togglekey)
@@ -221,7 +220,7 @@ lib.init = function(title, accent, togglekey)
 	end
 
 	game:GetService("UserInputService").InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == lib.togglekey and not lib.closing and not game:GetService("UserInputService"):GetFocusedTextBox() then
+		if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == lib.togglekey and not lib.closing then
 			lib.visible = not lib.visible
 			if lib.visible then
 				UILib.Enabled = true
@@ -1346,3 +1345,5 @@ lib.init = function(title, accent, togglekey)
 
 	return window
 end
+
+return lib
